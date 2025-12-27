@@ -1,0 +1,99 @@
+<!DOCTYPE html><html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para Marcelo 💗</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box}
+    body{
+      margin:0; min-height:100vh;
+      font-family:'Poppins', sans-serif;
+      background:linear-gradient(135deg,#ffd6e8,#f3e8ff);
+      color:#4a2c3a; overflow-x:hidden;
+    }
+    .container{max-width:900px; margin:0 auto; padding:60px 24px}
+    h1,h2{font-family:'Pacifico', cursive}
+    h1{font-size:3rem; text-align:center}
+    .card{
+      background:rgba(255,255,255,.75);
+      border-radius:24px; padding:32px; margin:32px 0;
+      box-shadow:0 10px 30px rgba(0,0,0,.08)
+    }
+    .btn{
+      display:inline-block; border:none; cursor:pointer;
+      background:#ff8fb1; color:white; padding:14px 22px;
+      border-radius:999px; font-weight:600; font-size:1rem
+    }
+    .center{text-align:center}
+    .hearts span{
+      position:fixed; bottom:-10px; font-size:20px; animation:float 8s linear infinite; opacity:.6
+    }
+    @keyframes float{0%{transform:translateY(0)}100%{transform:translateY(-110vh)}}
+    .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px}
+    .img{
+      height:160px; border-radius:18px; background-size:cover; background-position:center;
+      box-shadow:0 8px 20px rgba(0,0,0,.12)
+    }
+    footer{opacity:.7; text-align:center; margin-top:40px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="center">
+      <h1 style="font-size:3.5rem; margin-bottom:0">My Dear</h1>
+      <p style="font-family:'Pacifico', cursive; font-size:1.3rem; margin-top:4px">Love</p>
+    </div>
+    <p class="center">Un pequeño lugar solo nuestro</p><div class="center">
+  <button class="btn" onclick="playMusic()">▶ Reproducir música</button>
+</div>
+
+<div class="card">
+  <h2>Mi carta para ti</h2>
+  <p>
+    Marcelo, escribo esto con el corazón en la mano. No soy perfecta y lo sabes, pero
+    cada palabra aquí nace de lo mucho que te amo. Gracias por quedarte, por tenerme
+    paciencia y por ser hogar incluso en los días difíciles.
+  </p>
+  <p>
+    Contigo aprendí que amar también es intentar, hablar, sanar y volver a elegir.
+    Y yo te elijo, una y otra vez.
+  </p>
+</div>
+
+<div class="card">
+  <h2>Pequeños recuerdos</h2>
+  <div class="grid">
+    <div class="img" style="background-image:url('https://i.pinimg.com/736x/aa/3b/1e/aa3b1e9c6c1b3c0c7f3c3e5d0b8c7a8a.jpg')"></div>
+    <div class="img" style="background-image:url('https://i.pinimg.com/736x/6f/8b/4a/6f8b4a0c7a4b1b9f5a3b6c9e8d7a1c2f.jpg')"></div>
+    <div class="img" style="background-image:url('https://i.pinimg.com/736x/0f/4c/1a/0f4c1a7b2e3f4d5a6b7c8d9e0f1a2b3c.jpg')"></div>
+  </div>
+</div>
+
+<div class="card center">
+  <h2>Siempre tú</h2>
+  <p>Gracias por existir, por sentir, por amar conmigo.</p>
+  <p>Con todo mi amor 💞</p>
+</div>
+
+<footer>Hecho con amor para ti</footer>
+
+  </div>  <audio id="music" loop>
+    <!-- Reemplaza el src con tu canción en .mp3 cuando la tengas -->
+    <source src="TU_CANCION_AQUI.mp3" type="audio/mpeg" />
+  </audio>  <div class="hearts" aria-hidden="true"></div>  <script>
+    function playMusic(){
+      const m=document.getElementById('music');
+      m.play();
+    }
+    const hearts=document.querySelector('.hearts');
+    setInterval(()=>{
+      const s=document.createElement('span');
+      s.textContent='💗';
+      s.style.left=Math.random()*100+'vw';
+      s.style.animationDuration=(6+Math.random()*4)+'s';
+      hearts.appendChild(s);
+      setTimeout(()=>s.remove(),10000);
+    },600);
+  </script></body>
+</html>
