@@ -54,3 +54,10 @@ body {
   color: black;
   display: block;
 }
+
+.banner {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-bottom-left-radius: 30px;
+  border
