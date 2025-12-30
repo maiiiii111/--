@@ -1,42 +1,30 @@
-body {
-  background-color: #f7f2f5;
-  font-family: 'Comic Sans MS', cursive;
-  text-align: center;
-}
+<body>
 
-.title {
-  font-size: 48px;
-  margin-top: 20px;
-}
+<h1 class="title">
+  My Dear <span>Love</span>
+</h1>
 
-.title span {
-  font-size: 24px;
-  font-style: italic;
-}
+<div class="section left">
+  <img src="intro.jpg">
+  <p>
+    Todo esto lo escribo con el corazón,
+    te amo demasiado y quiero que lo recuerdes.
+  </p>
+</div>
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+<a href="tres-anios.html" class="section right link">
+  <img src="3anios.jpg">
+  <p>3 años</p>
+</a>
 
-.card {
-  background: #bfbfbf;
-  width: 220px;
-  padding: 15px;
-  margin: 20px;
-  border-radius: 20px;
-  text-decoration: none;
-  color: black;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-}
+<a href="cartas.html" class="section left link">
+  <img src="cartas.jpg">
+  <p>Cartas</p>
+</a>
 
-.card img {
-  width: 100%;
-  border-radius: 15px;
-}
+<a href="pequenas-cosas.html" class="section right link">
+  <img src="pequenas.jpg">
+  <p>Pequeñas cosas</p>
+</a>
 
-.card p {
-  margin-top: 10px;
-  font-size: 20px;
-}
+</body>
