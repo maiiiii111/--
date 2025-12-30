@@ -1,30 +1,56 @@
-<body>
+body {
+  background-color: #fdecef;
+  font-family: 'Comic Sans MS', cursive;
+  text-align: center;
+}
 
-<h1 class="title">
-  My Dear <span>Love</span>
-</h1>
+.title {
+  font-size: 46px;
+  margin: 30px 0;
+}
 
-<div class="section left">
-  <img src="intro.jpg">
-  <p>
-    Todo esto lo escribo con el corazón,
-    te amo demasiado y quiero que lo recuerdes.
-  </p>
-</div>
+.title span {
+  font-size: 22px;
+  font-style: italic;
+}
 
-<a href="tres-anios.html" class="section right link">
-  <img src="3anios.jpg">
-  <p>3 años</p>
-</a>
+/* SECCIÓN SUPERIOR */
+.top-section {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
 
-<a href="cartas.html" class="section left link">
-  <img src="cartas.jpg">
-  <p>Cartas</p>
-</a>
+.box {
+  background-color: #e6a9b4;
+  padding: 15px;
+  border-radius: 20px;
+  width: 220px;
+}
 
-<a href="pequenas-cosas.html" class="section right link">
-  <img src="pequenas.jpg">
-  <p>Pequeñas cosas</p>
-</a>
+.box img {
+  width: 100%;
+  border-radius: 15px;
+}
 
-</body>
+.box.text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box p {
+  font-size: 16px;
+}
+
+/* BLOQUES CENTRALES */
+.center {
+  margin: 30px auto;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  display: block;
+}
