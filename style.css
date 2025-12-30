@@ -1,0 +1,42 @@
+body {
+  background-color: #f7f2f5;
+  font-family: 'Comic Sans MS', cursive;
+  text-align: center;
+}
+
+.title {
+  font-size: 48px;
+  margin-top: 20px;
+}
+
+.title span {
+  font-size: 24px;
+  font-style: italic;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  background: #bfbfbf;
+  width: 220px;
+  padding: 15px;
+  margin: 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: black;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.card p {
+  margin-top: 10px;
+  font-size: 20px;
+}
