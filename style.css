@@ -1,65 +1,74 @@
 body {
-  margin: 0;
-  font-family: 'Comic Sans MS', cursive;
-  background: #ffe6f0;
-  text-align: center;
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Fuente tierna */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9f9f9;
 }
 
-/* BANNER */
 .banner {
-  width: 100%;
-  max-height: 250px;
-  object-fit: cover;
-  display: block;
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
 }
 
-/* TITULO */
 .title {
-  font-size: 48px;
-  margin: 20px 0;
+    font-size: 2.5rem;
+    margin: 20px 0;
 }
 
 .title span {
-  font-size: 28px;
-  font-style: italic;
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-size: 1.2rem;
 }
 
-/* SECCIONES */
-.top-section {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin: 30px;
-  flex-wrap: wrap;
+.main-container {
+    width: 95%;
+    max-width: 500px; /* Controla que no se vea gigante */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.box {
-  background: #b8b8b8;
-  padding: 10px;
-  width: 250px;
+/* Alineaciones */
+.row-split { display: flex; width: 100%; }
+.row-right { display: flex; justify-content: flex-end; }
+.row-left { display: flex; justify-content: flex-start; }
+.row-center { display: flex; justify-content: center; }
+
+/* Cajas */
+.box-dark {
+    background-color: #636066; /* Gris oscuro */
+    padding: 10px;
 }
 
-.box video {
-  width: 100%;
-  height: auto;
-  display: block;
+.box-light {
+    background-color: #d1ced1; /* Gris claro */
+    padding: 15px;
+    color: black;
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+    line-height: 1.4;
 }
 
-/* TEXTO */
-.text {
-  background: #d6d0d3;
-  display: flex;
-  align-items: center;
+.link-card {
+    text-decoration: none;
+    color: white;
+    width: 220px; /* Tamaño fijo para que no ocupen toda la pantalla */
+    text-align: center;
 }
 
-/* LINKS */
-.link {
-  text-decoration: none;
-  color: black;
-  margin: 30px auto;
-  display: block;
+.link-card.full {
+    width: 100%; /* El último ocupa más espacio */
 }
 
-.center p {
-  margin-top: 10px;
-  font-size: 18px;
+video {
+    width: 100%;
+    display: block;
+}
+
+p { margin: 5px 0; }
