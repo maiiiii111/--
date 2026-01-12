@@ -1,53 +1,97 @@
+/* Configuración General */
 body {
-  background-color: #f5f5f5; /* Color de fondo claro */
-  font-family: 'Comic Sans MS', cursive; /* O la fuente que prefieras */
-  text-align: center;
+    background-color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+/* El Banner de arriba */
+.banner {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Título principal */
+.title {
+    font-size: 2.5rem;
+    margin: 20px 0;
+    text-align: center;
+}
+.title span {
+    font-style: italic;
+    font-family: 'Times New Roman', serif;
+}
+
+/* Contenedor principal para los bloques */
 .container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
+    width: 90%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Espacio entre cada sección */
+    padding-bottom: 50px;
 }
 
+/* Bloque Superior (Video + Texto) */
+.top-section {
+    display: flex;
+    align-items: stretch;
+    gap: 0; /* Sin espacio para que parezcan unidos */
+}
+
+/* Estilo de las Cajas */
+.box {
+    background-color: #636066; /* Gris oscuro */
+    padding: 15px;
+    border: 1px solid #444;
+}
+
+.box.text {
+    background-color: #d1ced1; /* Gris claro */
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    padding: 20px;
+}
+
+/* Configuración de Filas para el zig-zag */
 .row {
-  display: flex;
-  justify-content: flex-start; /* Alinea a la izquierda por defecto */
-  margin-bottom: 20px;
-  width: 100%;
+    display: flex;
+    width: 100%;
 }
 
-/* Esta clase mueve el contenido a la derecha */
-.row.reverse {
-  justify-content: flex-end;
+.row.left { justify-content: flex-start; }
+.row.right { justify-content: flex-end; }
+
+/* Estilo de los Links (las cajitas de abajo) */
+.link {
+    text-decoration: none;
+    color: white;
+    width: 250px; /* Tamaño de los cuadros pequeños */
+    text-align: center;
+    transition: transform 0.3s;
 }
 
-.card {
-  background-color: #6d6a75; /* El gris oscuro de tu diseño */
-  padding: 15px;
-  color: white;
-  border-radius: 4px;
+.link:hover {
+    transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
 }
 
-.image-box {
-  width: 300px; /* Ajusta el tamaño según necesites */
+/* Ajuste de Videos e Imágenes */
+video {
+    width: 100%;
+    display: block;
+    border: 1px solid rgba(255,255,255,0.3);
 }
 
-.text-box {
-  background-color: #c0bcc4; /* El gris claro */
-  color: black;
-  width: 300px;
-  display: flex;
-  align-items: center;
-  margin-left: 10px;
-}
-
-img {
-  width: 100%;
-  display: block;
-}
-
-.caption {
-  margin-top: 10px;
-  font-weight: bold;
+p {
+    margin: 10px 0 0 0;
+    font-weight: bold;
 }
