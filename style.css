@@ -1,3 +1,4 @@
+/* Importamos fuentes para el diseño */
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Great+Vibes&display=swap');
 
 body {
@@ -10,79 +11,94 @@ body {
     background-color: #fcfcfc;
 }
 
+/* El Banner de arriba */
 .banner {
     width: 100%;
     max-height: 250px;
     object-fit: cover;
+    display: block;
 }
 
-/* Título centrado y grande */
+/* ROJO: Título más grande y centrado en el espacio blanco */
 .title {
-    font-size: 4rem; 
-    margin: 60px 0;   
+    font-size: 5rem; /* Mucho más grande como pediste */
+    margin: 80px 0;   /* Espacio extra para que flote justo al centro */
     text-align: center;
+    color: #333;
 }
 
 .title span {
     font-family: 'Great Vibes', cursive;
-    font-size: 3rem;
-    color: #ff99aa;
+    font-size: 3.5rem;
+    color: #ff99aa; /* Un rosa suave para el Love */
+    margin-left: 10px;
 }
 
-/* Contenedor principal */
+/* Contenedor principal para que todo respire */
 .main-container {
     width: 90%;
-    max-width: 900px; 
+    max-width: 1000px; /* Permite que los bloques se expandan */
     display: flex;
     flex-direction: column;
-    gap: 40px; 
-    padding-bottom: 80px;
+    gap: 50px; /* Espacio entre cada sección */
 }
 
-/* Bloque superior (Video + Texto) */
+/* NARANJA: Bloque superior más largo */
 .row-split {
     display: flex;
     width: 100%;
+    max-width: 950px; /* Más ancho para llenar la pantalla horizontalmente */
+    margin: 0 auto;
 }
 
 .box-dark {
     background-color: #636066;
-    padding: 15px;
-    width: 50%; /* Mitad para el video */
+    padding: 20px;
 }
 
 .box-light {
     background-color: #d1ced1;
-    padding: 20px;
-    width: 50%; /* Mitad para el texto */
+    padding: 30px;
+    flex: 1;
     display: flex;
     align-items: center;
     color: black;
+    font-size: 1.2rem;
 }
 
-/* Zig-Zag */
+/* AMARILLO: Bloques de links más grandes y en zigzag */
 .row-right { display: flex; justify-content: flex-end; width: 100%; }
 .row-left { display: flex; justify-content: flex-start; width: 100%; }
+.row-center { display: flex; justify-content: center; width: 100%; }
 
-/* Las tres cajitas iguales */
 .link-card {
     text-decoration: none;
     color: white;
-    width: 400px; /* Tamaño fijo para los tres */
+    width: 450px; /* Mucho más grandes para que no se vea vacía la página */
     text-align: center;
-    transition: transform 0.3s;
+    transition: all 0.4s ease;
 }
 
+/* Efecto de movimiento al pasar el mouse */
 .link-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-15px);
+    filter: brightness(1.1);
+}
+
+/* AZUL: Bloque final centrado y que no tope con el borde de abajo */
+.link-card.full {
+    width: 100%;
+    max-width: 950px;
+    margin-bottom: 100px; /* Margen azul: espacio para que no choque con el fondo */
 }
 
 video {
-    width: 100%; /* Esto evita que el video se salga del cuadro */
+    width: 100%;
     display: block;
 }
 
 p {
-    margin: 10px 0 0 0;
+    margin-top: 15px;
     font-weight: bold;
+    font-size: 1.3rem;
 }
