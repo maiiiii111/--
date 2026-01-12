@@ -1,97 +1,79 @@
-/* Configuración General */
 body {
-    background-color: #ffffff;
-    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    font-family: 'Arial', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #fff;
 }
 
-/* El Banner de arriba */
 .banner {
     width: 100%;
-    max-height: 250px;
+    max-height: 200px;
     object-fit: cover;
-    display: block;
 }
 
-/* Título principal */
 .title {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin: 20px 0;
-    text-align: center;
-}
-.title span {
-    font-style: italic;
-    font-family: 'Times New Roman', serif;
 }
 
-/* Contenedor principal para los bloques */
-.container {
+.title span {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 1.5rem;
+}
+
+.main-container {
     width: 90%;
-    max-width: 700px;
+    max-width: 600px;
     display: flex;
     flex-direction: column;
-    gap: 25px; /* Espacio entre cada sección */
-    padding-bottom: 50px;
+    gap: 20px;
 }
 
-/* Bloque Superior (Video + Texto) */
-.top-section {
-    display: flex;
-    align-items: stretch;
-    gap: 0; /* Sin espacio para que parezcan unidos */
-}
+/* Estructura de Filas */
+.row-split { display: flex; width: 100%; }
+.row-right { display: flex; justify-content: flex-end; width: 100%; }
+.row-left { display: flex; justify-content: flex-start; width: 100%; }
+.row-center { display: flex; justify-content: center; width: 100%; }
 
-/* Estilo de las Cajas */
-.box {
-    background-color: #636066; /* Gris oscuro */
+/* Cajas de colores */
+.box-dark {
+    background-color: #636066; /* Gris oscuro del diseño */
     padding: 15px;
-    border: 1px solid #444;
+    flex: 1;
 }
 
-.box.text {
-    background-color: #d1ced1; /* Gris claro */
-    color: #000;
+.box-light {
+    background-color: #d1ced1; /* Gris claro del diseño */
+    padding: 20px;
+    flex: 1;
     display: flex;
     align-items: center;
-    justify-content: center;
+    color: black;
     font-size: 0.9rem;
-    padding: 20px;
 }
 
-/* Configuración de Filas para el zig-zag */
-.row {
-    display: flex;
+/* Tarjetas con links */
+.link-card {
+    text-decoration: none;
+    color: white;
+    width: 250px;
+    text-align: center;
+}
+
+.link-card.full {
     width: 100%;
 }
 
-.row.left { justify-content: flex-start; }
-.row.right { justify-content: flex-end; }
-
-/* Estilo de los Links (las cajitas de abajo) */
-.link {
-    text-decoration: none;
-    color: white;
-    width: 250px; /* Tamaño de los cuadros pequeños */
-    text-align: center;
-    transition: transform 0.3s;
-}
-
-.link:hover {
-    transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
-}
-
-/* Ajuste de Videos e Imágenes */
 video {
     width: 100%;
     display: block;
-    border: 1px solid rgba(255,255,255,0.3);
 }
 
 p {
-    margin: 10px 0 0 0;
-    font-weight: bold;
+    margin-top: 10px;
 }
