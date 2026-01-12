@@ -1,78 +1,59 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #fff;
-}
-
-.banner {
-    width: 100%;
-    max-height: 200px;
-    object-fit: cover;
-}
-
+/* 1. Título más grande y centrado entre el banner y el contenido */
 .title {
-    font-size: 2.5rem;
-    margin: 20px 0;
+    font-size: 4.5rem; /* Mucho más grande */
+    margin: 40px 0;   /* Más espacio arriba y abajo para que flote en el medio */
     text-align: center;
-}
-
-.main-container {
-    width: 90%;
-    max-width: 600px; /* Tamaño ideal basado en tu diseño */
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-/* --- ESTO HACE EL ZIGZAG --- */
-.row-right {
-    display: flex;
-    justify-content: flex-end; /* Empuja a la derecha */
     width: 100%;
 }
 
-.row-left {
+.title span {
+    font-family: 'Brush Script MT', cursive; /* Una fuente más artística para "Love" */
+    font-size: 2.5rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* 2. Bloque naranja (row-split) más largo */
+.row-split {
     display: flex;
-    justify-content: flex-start; /* Empuja a la izquierda */
     width: 100%;
+    max-width: 850px; /* Aumentamos el ancho máximo para que sea más largo */
+    margin: 0 auto 30px auto; /* Centrado */
 }
 
-.row-center, .row-split {
-    display: flex;
-    width: 100%;
-}
-
-/* Cajas y Colores */
-.box-dark {
-    background-color: #636066; /* Gris oscuro */
-    padding: 15px;
-}
-
-.box-light {
-    background-color: #d1ced1; /* Gris claro */
-    padding: 20px;
-    flex: 1;
-    display: flex;
-    align-items: center;
-    color: black;
-}
-
+/* 3. Bloques amarillos (link-card) más grandes */
 .link-card {
     text-decoration: none;
     color: white;
-    width: 260px; /* Ancho fijo para que se note el zigzag */
+    width: 350px; /* Aumentamos de 260px a 350px para que no se vea vacío */
     text-align: center;
+    transition: transform 0.3s ease; /* El efecto de movimiento que querías */
+}
+
+/* El efecto que mencionaste: se mueve un poquito al pasar el mouse */
+.link-card:hover {
+    transform: translateY(-10px) scale(1.02); 
+    filter: brightness(1.1); /* Brilla un poquito */
+}
+
+/* 4. Bloque azul (Pequeñas cosas) centrado y con margen abajo */
+.row-center {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 80px; /* Margen grande abajo para que no tope con el borde */
 }
 
 .link-card.full {
-    width: 100%; /* El último es más grande */
+    width: 100%;
+    max-width: 800px; /* Para que la caja de abajo también sea imponente */
 }
 
-video {
-    width: 100%;
-    display: block;
+/* Ajuste general para el contenedor para que respire */
+.main-container {
+    width: 95%;
+    max-width: 900px; 
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Más espacio entre cada bloque para que se vea elegante */
 }
