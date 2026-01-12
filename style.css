@@ -1,17 +1,17 @@
-/* Importamos fuentes para el diseño */
+/* 1. Importación de fuentes (Indispensable para que se vea como la imagen) */
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Great+Vibes&display=swap');
 
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Fredoka', sans-serif;
+    font-family: 'Fredoka', sans-serif; /* Fuente redondeada para todo el texto */
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #fcfcfc;
 }
 
-/* El Banner de arriba */
+/* Banner superior */
 .banner {
     width: 100%;
     max-height: 250px;
@@ -19,45 +19,46 @@ body {
     display: block;
 }
 
-/* ROJO: Título más grande y centrado en el espacio blanco */
+/* Título: Grande y centrado en el espacio blanco */
 .title {
-    font-size: 5rem; /* Mucho más grande como pediste */
-    margin: 80px 0;   /* Espacio extra para que flote justo al centro */
+    font-size: 5rem; 
+    margin: 80px 0;   
     text-align: center;
     color: #333;
 }
 
 .title span {
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Great Vibes', cursive; /* Fuente para "Love" */
     font-size: 3.5rem;
-    color: #ff99aa; /* Un rosa suave para el Love */
+    color: #ff99aa; 
     margin-left: 10px;
 }
 
-/* Contenedor principal para que todo respire */
+/* Contenedor que agrupa todos los bloques */
 .main-container {
     width: 90%;
-    max-width: 1000px; /* Permite que los bloques se expandan */
+    max-width: 1000px; 
     display: flex;
     flex-direction: column;
-    gap: 50px; /* Espacio entre cada sección */
+    gap: 50px; 
+    padding-bottom: 100px; /* Espacio para que el último cuadro no tope abajo */
 }
 
-/* NARANJA: Bloque superior más largo */
+/* BLOQUE SUPERIOR (Intro y texto lado a lado) */
 .row-split {
     display: flex;
     width: 100%;
-    max-width: 950px; /* Más ancho para llenar la pantalla horizontalmente */
+    max-width: 950px; 
     margin: 0 auto;
 }
 
 .box-dark {
-    background-color: #636066;
+    background-color: #636066; /* Gris oscuro de los videos */
     padding: 20px;
 }
 
 .box-light {
-    background-color: #d1ced1;
+    background-color: #d1ced1; /* Gris claro del texto */
     padding: 30px;
     flex: 1;
     display: flex;
@@ -66,25 +67,33 @@ body {
     font-size: 1.2rem;
 }
 
-/* AMARILLO: Bloques de links más grandes y en zigzag */
-.row-right { display: flex; justify-content: flex-end; width: 100%; }
-.row-left { display: flex; justify-content: flex-start; width: 100%; }
-.row-center { display: flex; justify-content: center; width: 100%; }
+/* SISTEMA DE ZIG-ZAG (Alineaciones) */
+.row-right { 
+    display: flex; 
+    justify-content: flex-end; 
+    width: 100%; 
+}
 
+.row-left { 
+    display: flex; 
+    justify-content: flex-start; 
+    width: 100%; 
+}
+
+/* BLOQUES DE LINKS (Todos del mismo tamaño ahora) */
 .link-card {
     text-decoration: none;
     color: white;
-    width: 450px; /* Mucho más grandes para que no se vea vacía la página */
+    width: 450px; /* El tamaño fijo que pediste para los tres */
     text-align: center;
-    transition: all 0.4s ease;
+    transition: all 0.4s ease; /* Efecto de movimiento */
 }
 
-/* Efecto de movimiento al pasar el mouse */
+/* El efecto al pasar el mouse */
 .link-card:hover {
     transform: translateY(-15px);
     filter: brightness(1.1);
 }
-
 
 video {
     width: 100%;
