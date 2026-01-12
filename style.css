@@ -87,8 +87,6 @@ body {
 
 /* AZUL: Bloque final centrado y que no tope con el borde de abajo */
 .link-card.full {
-    width: 100%;
-    max-width: 950px;
     margin-bottom: 100px; /* Margen azul: espacio para que no choque con el fondo */
 }
 
