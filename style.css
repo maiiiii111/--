@@ -69,7 +69,7 @@ body {
 /* AMARILLO: Bloques de links más grandes y en zigzag */
 .row-right { display: flex; justify-content: flex-end; width: 100%; }
 .row-left { display: flex; justify-content: flex-start; width: 100%; }
-.row-center { display: flex; justify-content: center; width: 100%; }
+.row-center { display: flex; justify-content: flex-end; width: 100%; }
 
 .link-card {
     text-decoration: none;
