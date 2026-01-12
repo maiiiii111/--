@@ -85,10 +85,6 @@ body {
     filter: brightness(1.1);
 }
 
-/* AZUL: Bloque final centrado y que no tope con el borde de abajo */
-.link-card.full {
-    margin-bottom: 100px; /* Margen azul: espacio para que no choque con el fondo */
-}
 
 video {
     width: 100%;
