@@ -1,11 +1,11 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Comic Sans MS', cursive, sans-serif; /* Fuente tierna */
+    font-family: 'Arial', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f9f9f9;
+    background-color: #fff;
 }
 
 .banner {
@@ -17,58 +17,62 @@ body {
 .title {
     font-size: 2.5rem;
     margin: 20px 0;
-}
-
-.title span {
-    font-family: 'Georgia', serif;
-    font-style: italic;
-    font-size: 1.2rem;
+    text-align: center;
 }
 
 .main-container {
-    width: 95%;
-    max-width: 500px; /* Controla que no se vea gigante */
+    width: 90%;
+    max-width: 600px; /* Tamaño ideal basado en tu diseño */
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
 }
 
-/* Alineaciones */
-.row-split { display: flex; width: 100%; }
-.row-right { display: flex; justify-content: flex-end; }
-.row-left { display: flex; justify-content: flex-start; }
-.row-center { display: flex; justify-content: center; }
+/* --- ESTO HACE EL ZIGZAG --- */
+.row-right {
+    display: flex;
+    justify-content: flex-end; /* Empuja a la derecha */
+    width: 100%;
+}
 
-/* Cajas */
+.row-left {
+    display: flex;
+    justify-content: flex-start; /* Empuja a la izquierda */
+    width: 100%;
+}
+
+.row-center, .row-split {
+    display: flex;
+    width: 100%;
+}
+
+/* Cajas y Colores */
 .box-dark {
     background-color: #636066; /* Gris oscuro */
-    padding: 10px;
+    padding: 15px;
 }
 
 .box-light {
     background-color: #d1ced1; /* Gris claro */
-    padding: 15px;
-    color: black;
+    padding: 20px;
+    flex: 1;
     display: flex;
     align-items: center;
-    font-size: 0.85rem;
-    line-height: 1.4;
+    color: black;
 }
 
 .link-card {
     text-decoration: none;
     color: white;
-    width: 220px; /* Tamaño fijo para que no ocupen toda la pantalla */
+    width: 260px; /* Ancho fijo para que se note el zigzag */
     text-align: center;
 }
 
 .link-card.full {
-    width: 100%; /* El último ocupa más espacio */
+    width: 100%; /* El último es más grande */
 }
 
 video {
     width: 100%;
     display: block;
 }
-
-p { margin: 5px 0; }
