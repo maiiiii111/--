@@ -8,7 +8,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #fcfcfc;
+    background-color: #EDEEFF;
 }
 
 /* El Banner de arriba */
@@ -52,12 +52,12 @@ body {
 }
 
 .box-dark {
-    background-color: #636066;
+    background-color: #36364E;
     padding: 20px;
 }
 
 .box-light {
-    background-color: #d1ced1;
+    background-color: #8886AB;
     padding: 30px;
     flex: 1;
     display: flex;
