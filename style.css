@@ -248,3 +248,43 @@ video {
     font-style: italic;
     margin: 0 10px;
 }
+
+/* --- PEGA ESTO AL FINAL DE TU ARCHIVO --- */
+
+.contenedor-de-cartas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;      
+    flex-wrap: wrap; 
+    margin: 40px auto;
+    max-width: 95%;
+}
+
+.caja-de-cartas {
+    text-decoration: none;
+    width: 105px;    
+}
+
+.cuadrado-gris {
+    background-color: #36364E; /* Usando el morado oscuro de tu contador */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.cuadrado-gris img {
+    width: 100%;
+    height: 90px;    
+    object-fit: cover;
+}
+
+.cuadrado-gris p {
+    color: #ffffff;  /* Texto en blanco o rosa como prefieras */
+    font-weight: bold;
+    margin: 8px 0;
+    font-size: 0.8rem;
+    text-align: center;
+}
