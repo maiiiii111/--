@@ -2,29 +2,33 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Me & You</title>
+    <title>Nuestro tiempo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="cartas-page">
 
-    <div class="header-cartas">
-        <p class="desc-negrita">Nuestro Tiempo</p>
-    </div>
+    <p class="titulo-tiempo">Nuestro tiempo</p>
 
-    <div class="cartas-container">
-        <div class="carta-box">
-            <div class="cuadrado-gris contador-box">
-                <p class="etiqueta-contador">Me</p>
-                <div id="reloj-me" class="numeros-contador">Cargando...</div>
+    <div class="main-contador-container">
+        
+        <div class="columna-contador">
+            <img src="foto_me.jpeg" class="foto-perfil">
+            <p class="nombre-label">Me</p>
+            <div class="cuadro-morado">
+                <div id="reloj-me" class="numeros-rosa">Cargando...</div>
             </div>
         </div>
 
-        <div class="carta-box">
-            <div class="cuadrado-gris contador-box">
-                <p class="etiqueta-contador">You</p>
-                <div id="reloj-you" class="numeros-contador">Cargando...</div>
+        <div class="separador-and">And</div>
+
+        <div class="columna-contador">
+            <img src="foto_you.jpeg" class="foto-perfil">
+            <p class="nombre-label">You</p>
+            <div class="cuadro-morado">
+                <div id="reloj-you" class="numeros-rosa">Cargando...</div>
             </div>
         </div>
+
     </div>
 
     <div class="footer-cartas">
@@ -33,12 +37,11 @@
 
     <script>
         function actualizarContadores() {
-            // FECHA DE INICIO (Año, Mes-1, Día)
-            const fechaInicio = new Date(2021, 0, 15); 
+            const fechaInicio = new Date(2021, 0, 15); // Tu fecha real
             const ahora = new Date();
 
-            function calcularTiempo(tiempoActual) {
-                const diff = tiempoActual - fechaInicio;
+            function calcular(tiempo) {
+                const diff = tiempo - fechaInicio;
                 const d = Math.floor(diff / (1000 * 60 * 60 * 24));
                 const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
                 const m = Math.floor((diff / 1000 / 60) % 60);
@@ -46,17 +49,14 @@
                 return `${d}d ${h}h ${m}m ${s}s`;
             }
 
-            // Reloj ME (Hora normal)
-            document.getElementById('reloj-me').innerHTML = calcularTiempo(ahora);
-
-            // Reloj YOU (Adelantado 2 horas)
+            document.getElementById('reloj-me').innerHTML = calcular(ahora);
+            
+            // Ajuste You (+2 horas)
             const tiempoYou = new Date(ahora.getTime() + (2 * 60 * 60 * 1000));
-            document.getElementById('reloj-you').innerHTML = calcularTiempo(tiempoYou);
+            document.getElementById('reloj-you').innerHTML = calcular(tiempoYou);
         }
-
         setInterval(actualizarContadores, 1000);
         actualizarContadores();
     </script>
 </body>
 </html>
-
