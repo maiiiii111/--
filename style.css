@@ -189,3 +189,22 @@ video {
     color: #333;
     font-family: 'Fredoka', sans-serif;
 }
+
+/* Estilos para los cuadros del contador */
+.contador-box {
+    justify-content: center !important;
+    gap: 20px;
+}
+
+.etiqueta-contador {
+    font-size: 2rem !important;
+    color: #ffffff !important; /* "Me" y "You" en blanco */
+    margin-bottom: 10px;
+}
+
+.numeros-contador {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff99aa; /* Los números en rosa */
+    text-align: center;
+}
