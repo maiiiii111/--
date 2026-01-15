@@ -225,7 +225,7 @@ video {
 }
 
 .cuadro-morado {
-    background-color: #636066; /* El morado/gris de tu imagen */
+    background-color: #36364E; /* El morado/gris de tu imagen */
     width: 100%;
     padding: 30px 10px;
     display: flex;
@@ -234,7 +234,7 @@ video {
 }
 
 .numeros-rosa {
-    color: #ff99aa; /* El rosa de tu imagen */
+    color: #ffffff; /* El rosa de tu imagen */
     font-size: 1.8rem;
     font-weight: bold;
 }
