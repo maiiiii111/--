@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Nuestro tiempo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="cartas-page">
@@ -12,10 +13,7 @@
     <div class="main-contador-container">
         
         <div class="columna-contador">
-            <video autoplay loop muted playsinline>
-                    <source src="Me.gif" type="video/mp4">
-            </video>
-            <p class="nombre-label">Me</p>
+            <img src="Me.gif" class="foto-perfil"> <p class="nombre-label">Me</p>
             <div class="cuadro-morado">
                 <div id="reloj-me" class="numeros-rosa">Cargando...</div>
             </div>
@@ -24,10 +22,7 @@
         <div class="separador-and">And</div>
 
         <div class="columna-contador">
-            <video autoplay loop muted playsinline>
-                    <source src="You.gif" type="video/mp4">
-            </video>
-            <p class="nombre-label">You</p>
+            <img src="You.gif" class="foto-perfil"> <p class="nombre-label">You</p>
             <div class="cuadro-morado">
                 <div id="reloj-you" class="numeros-rosa">Cargando...</div>
             </div>
@@ -41,24 +36,42 @@
 
     <script>
         function actualizarContadores() {
-            const fechaInicio = new Date('2023-01-15T00:00:00'); ; // Tu fecha real
+            // Pon tu fecha aquí: 'AAAA-MM-DD'
+            const fechaInicio = new Date('2021-01-15T00:00:00'); 
             const ahora = new Date();
 
-            function calcular(tiempo) {
-                const diff = tiempo - fechaInicio;
-                const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-                const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
-                const m = Math.floor((diff / 1000 / 60) % 60);
-                const s = Math.floor((diff / 1000) % 60);
-                return `${d}d ${h}h ${m}m ${s}s`;
+            function calcularCompleto(tiempoActual) {
+                let inicio = new Date(fechaInicio);
+                
+                let años = tiempoActual.getFullYear() - inicio.getFullYear();
+                let mesInicio = inicio.getMonth();
+                let mesActual = tiempoActual.getMonth();
+                
+                if (mesActual < mesInicio || (mesActual === mesInicio && tiempoActual.getDate() < inicio.getDate())) {
+                    años--;
+                }
+
+                // Cálculo de días restantes tras los años
+                let ultimoAniversario = new Date(fechaInicio);
+                ultimoAniversario.setFullYear(inicio.getFullYear() + años);
+                
+                const diffMilisegundos = tiempoActual - ultimoAniversario;
+                
+                const d = Math.floor(diffMilisegundos / (1000 * 60 * 60 * 24));
+                const h = Math.floor((diffMilisegundos / (1000 * 60 * 60)) % 24);
+                const m = Math.floor((diffMilisegundos / 1000 / 60) % 60);
+                const s = Math.floor((diffMilisegundos / 1000) % 60);
+
+                return `${años}y ${d}d ${h}h ${m}m ${s}s`;
             }
 
-            document.getElementById('reloj-me').innerHTML = calcular(ahora);
+            document.getElementById('reloj-me').innerHTML = calcularCompleto(ahora);
             
             // Ajuste You (+2 horas)
             const tiempoYou = new Date(ahora.getTime() + (2 * 60 * 60 * 1000));
-            document.getElementById('reloj-you').innerHTML = calcular(tiempoYou);
+            document.getElementById('reloj-you').innerHTML = calcularCompleto(tiempoYou);
         }
+        
         setInterval(actualizarContadores, 1000);
         actualizarContadores();
     </script>
