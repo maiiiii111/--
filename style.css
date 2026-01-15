@@ -212,23 +212,107 @@ video {
     width: 280px;
 }
 
-.foto-perfil {
-    width: 100%;       /* Que ocupe todo el ancho del cuadro */
-    height: auto;       /* ¡IMPORTANTE! Que la altura se ajuste sola al GIF */
-    max-height: none;   /* Eliminamos cualquier restricción de altura */
-    object-fit: contain;
-    display: block;
-    margin-bottom: 0;   /* Pegado al nombre/cuadro */
+/* --- ESTILOS GENERALES Y FUENTES --- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: #fdf6f0; /* Color crema de tu fondo original */
 }
 
-/* Asegúrate de que el contenedor morado mantenga su color */
-.cuadro-morado {
-    background-color: #36364E; /* El color morado/gris de tu imagen de Canva */
-    width: 100%;        /* Que mida lo mismo que la foto */
-    padding: 15px 0;    /* Espacio arriba y abajo de los números */
+/* --- DISEÑO DE LOS 3 CUADROS (Pestaña Pequeñas Cosas) --- */
+.pagina-de-cartas {
+    background-color: #E6E6FA; /* Fondo lila claro como en tu imagen */
+    min-height: 100vh;
+}
+
+.encabezado-cartas {
+    text-align: center;
+    padding-top: 50px;
+    margin-bottom: 30px;
+}
+
+.contenedor-de-cartas {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.caja-de-cartas {
+    text-decoration: none;
+    width: 250px;
+}
+
+.cuadrado-gris {
+    background-color: #36364E; /* Morado oscuro exacto */
+    padding: 15px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s;
+}
+
+.cuadrado-gris:hover {
+    transform: scale(1.05);
+}
+
+.cuadrado-gris img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.cuadrado-gris p {
+    color: white;
+    font-weight: bold;
+    margin-top: 15px;
+    font-size: 1.1rem;
+}
+
+/* --- DISEÑO DEL CONTADOR (Pestaña Me & You) --- */
+.main-contador-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.columna-contador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 280px;
+}
+
+.foto-perfil {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin-bottom: 0;
+}
+
+.cuadro-morado {
+    background-color: #36364E; /* Color morado de tu diseño de Canva */
+    width: 100%;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.numeros-rosa {
+    color: #ffffff; /* Texto en blanco para legibilidad */
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .nombre-label {
@@ -236,67 +320,25 @@ video {
     margin: 10px 0;
 }
 
-.numeros-rosa {
-    color: #ffffff; /* El rosa de tu imagen */
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
 .separador-and {
-    font-family: 'Dancing Script', cursive; /* Si tienes una fuente cursiva */
+    font-family: 'Dancing Script', cursive; /* Fuente cursiva */
     font-size: 2rem;
     font-style: italic;
     margin: 0 10px;
 }
 
-/* --- ESTILO PARA LOS 3 CUADROS ALINEADOS --- */
-
-.pagina-de-cartas {
-    background-color: #EDEEFF; /* El color lila claro de fondo de tu imagen */
-    text-align: center;
-}
-
-.contenedor-de-cartas {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;       /* Espacio entre cuadros */
-    flex-wrap: nowrap; /* Mantiene los 3 en la misma fila en PC */
-    margin: 50px auto;
-}
-
-.caja-de-cartas {
-    text-decoration: none;
-    width: 200px;    /* Ancho de cada cuadro según tu imagen */
-}
-
-.cuadrado-gris {
-    background-color: #36364E; /* El morado oscuro de tus cuadros */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    border-radius: 2px;
-}
-
-.cuadrado-gris img {
-    width: 100%;
-    height: 180px;   /* Altura de la imagen interna */
-    object-fit: cover;
-}
-
-.cuadrado-gris p {
-    color: white;    /* Color del texto "Contador", "Fotos", etc. */
-    font-weight: bold;
-    margin-top: 15px;
-    font-family: sans-serif;
-}
-
+/* --- BOTONES Y OTROS --- */
 .btn-atras {
     background-color: #36364E;
     color: white;
-    padding: 10px 30px;
+    padding: 12px 40px;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
+    display: inline-block;
 }
+
+.pie-de-pagina-cartas {
+    text-align: center;
+    margin-top: 40px;
+    }
