@@ -22,7 +22,7 @@ body {
 /* ROJO: Título más grande y centrado en el espacio blanco */
 .title {
     font-size: 5rem; /* Mucho más grande como pediste */
-    margin: 80px 0;   /* Espacio extra para que flote justo al centro */
+    margin: 50px 0;   /* Espacio extra para que flote justo al centro */
     text-align: center;
     color: #333;
 }
@@ -31,7 +31,7 @@ body {
     font-family: 'Great Vibes', cursive;
     font-size: 8rem;
     color: #ff99aa; /* Un rosa suave para el Love */
-    margin-left: 10px;
+    margin-left: 5px;
 }
 
 /* Contenedor principal para que todo respire */
