@@ -123,9 +123,12 @@ video {
     flex-wrap: wrap;
 }
 
-.carta-box {
-    text-decoration: none;
+.carta-box:hover {
+    transform: translateY(-15px);
+    filter: brightness(1.1);
+    transition: transform 0.3s ease, filter 0.3s ease; /* Para que el movimiento sea suave */
 }
+
 
 .cuadrado-gris {
     background-color: #36364E; /* Gris oscuro de tus fotos */
