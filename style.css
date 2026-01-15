@@ -123,10 +123,16 @@ video {
     flex-wrap: wrap;
 }
 
+/* 1. Esta es la clase base: aquí es donde se define la suavidad */
+.carta-box {
+    /* ... tus otros estilos (background, padding, etc.) ... */
+    transition: transform 0.4s ease, filter 0.4s ease; 
+}
+
+/* 2. Este es el efecto cuando pasas el mouse */
 .carta-box:hover {
     transform: translateY(-15px);
     filter: brightness(1.1);
-    transition: transform 0.3s ease, filter 0.3s ease; /* Para que el movimiento sea suave */
 }
 
 
