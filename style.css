@@ -213,24 +213,27 @@ video {
 }
 
 .foto-perfil {
-    width: 200px;
-    height: 120px;
-    object-fit: cover;
-    border: 1px solid #ddd;
+    width: 200px; /* Mantén el ancho de tu diseño */
+    height: 150px; /* Ajusta la altura según prefieras */
+    object-fit: contain; /* Esto hace que el GIF se vea completo sin recortes */
+    background-color: transparent; /* Asegura que no haya bordes raros */
+    margin-bottom: 10px;
+}
+
+/* Asegúrate de que el contenedor morado mantenga su color */
+.cuadro-morado {
+    background-color: #36364E; /* El color morado/gris de tu imagen de Canva */
+    width: 100%;
+    padding: 20px;
+    border-radius: 8px; /* Opcional, para redondear las esquinas del cuadro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .nombre-label {
     font-weight: bold;
     margin: 10px 0;
-}
-
-.cuadro-morado {
-    background-color: #36364E; /* El morado/gris de tu imagen */
-    width: 100%;
-    padding: 30px 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .numeros-rosa {
