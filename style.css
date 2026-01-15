@@ -99,7 +99,7 @@ video {
 
 /* Página de Cartas - Estilo Final */
 .cartas-page {
-    background-color: #ffffff; /* Fondo blanco como pediste */
+    background-color: #EDEEFF; /* Fondo blanco como pediste */
     margin: 0;
     padding: 60px 20px;
     font-family: 'Fredoka', sans-serif;
@@ -129,7 +129,7 @@ video {
 }
 
 .cuadrado-gris {
-    background-color: #636066; /* Gris oscuro de tus fotos */
+    background-color: #36364E; /* Gris oscuro de tus fotos */
     width: 240px;
     height: 320px;
     padding: 20px;
@@ -150,7 +150,7 @@ video {
     margin: 10px 0 5px 0;
     font-size: 1.2rem;
     font-weight: bold;
-    color: #000; /* Texto negro dentro del gris */
+    color: #ffffff; /* Texto negro dentro del gris */
 }
 
 /* Botón atrás: Rectángulo gris con texto blanco */
@@ -160,7 +160,7 @@ video {
 
 .btn-atras {
     display: inline-block;
-    background-color: #636066;
+    background-color: #36364E;
     color: #ffffff;
     text-decoration: none;
     padding: 10px 30px;
