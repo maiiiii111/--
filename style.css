@@ -190,21 +190,58 @@ video {
     font-family: 'Fredoka', sans-serif;
 }
 
-/* Estilos para los cuadros del contador */
-.contador-box {
-    justify-content: center !important;
-    gap: 20px;
-}
-
-.etiqueta-contador {
-    font-size: 2rem !important;
-    color: #ffffff !important; /* "Me" y "You" en blanco */
-    margin-bottom: 10px;
-}
-
-.numeros-contador {
-    font-size: 1.5rem;
+.titulo-tiempo {
     font-weight: bold;
-    color: #ff99aa; /* Los números en rosa */
-    text-align: center;
+    margin-top: 30px;
+    font-size: 1.2rem;
+}
+
+.main-contador-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.columna-contador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 280px;
+}
+
+.foto-perfil {
+    width: 200px;
+    height: 120px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+}
+
+.nombre-label {
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.cuadro-morado {
+    background-color: #636066; /* El morado/gris de tu imagen */
+    width: 100%;
+    padding: 30px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.numeros-rosa {
+    color: #ff99aa; /* El rosa de tu imagen */
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.separador-and {
+    font-family: 'Dancing Script', cursive; /* Si tienes una fuente cursiva */
+    font-size: 2rem;
+    font-style: italic;
+    margin: 0 10px;
 }
