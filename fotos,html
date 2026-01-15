@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestras Fotos</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .mosaico-container {
+            max-width: 900px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+            gap: 15px; /* Espacio entre fotos */
+            padding: 20px;
+        }
+
+        .foto-item {
+            width: 100%;
+            aspect-ratio: 1 / 1; /* Hace que todas las fotos sean cuadradas */
+            overflow: hidden;
+            border-radius: 10px;
+            border: 3px solid #31314b;
+            transition: transform 0.3s ease;
+        }
+
+        .foto-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ajusta la imagen sin deformarla */
+            display: block;
+        }
+
+        .foto-item:hover {
+            transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+            border-color: #ff4d4d;
+        }
+
+        @media (max-width: 600px) {
+            .mosaico-container {
+                grid-template-columns: repeat(2, 1fr); /* 2 columnas en celular */
+            }
+        }
+    </style>
+</head>
+<body class="cartas-page">
+
+    <div class="header-cartas">
+        <p class="desc-negrita">Nuestros momentos favoritos</p>
+    </div>
+
+    <div class="mosaico-container">
+        <div class="foto-item"><img src="portada1.jpeg" alt="Foto 1"></div>
+        <div class="foto-item"><img src="portada2.jpeg" alt="Foto 2"></div>
+        <div class="foto-item"><img src="portada3.jpeg" alt="Foto 3"></div>
+        <div class="foto-item"><img src="carta1.jpeg" alt="Foto 4"></div>
+        <div class="foto-item"><img src="carta2.jpeg" alt="Foto 5"></div>
+        <div class="foto-item"><img src="carta3.jpeg" alt="Foto 6"></div>
+        <div class="foto-item"><img src="portada_contador1.gif" alt="Foto 7"></div>
+        <div class="foto-item"><img src="portada1.jpeg" alt="Foto 8"></div>
+        <div class="foto-item"><img src="portada2.jpeg" alt="Foto 9"></div>
+    </div>
+
+    <div class="footer-cartas">
+        <a href="pequenas-cosas.html" class="btn-atras">atrás</a>
+    </div>
+
+</body>
+</html>
