@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .quiz-container { max-width: 600px; margin: 20px auto; padding: 20px; background: #31314b; border-radius: 15px; color: white; }
+        .pregunta { margin-bottom: 20px; border-bottom: 1px solid #444; padding-bottom: 10px; }
+        .opcion { display: block; margin: 10px 0; cursor: pointer; }
+        .resultado-pantalla { text-align: center; display: none; }
+        .mensaje-noob { color: #ff4d4d; font-weight: bold; }
+        .mensaje-pro { color: #4dff88; font-weight: bold; }
+        #btn-enviar { background: #5d5d81; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; }
+        #imagen-constancia { width: 100%; max-width: 400px; margin-top: 20px; display: none; }
+    </style>
+</head>
+<body class="cartas-page">
+
+    <div id="quiz-box" class="quiz-container">
+        <h2>¿Cuánto me conoces?</h2>
+        <div id="contenedor-preguntas"></div>
+        <button id="btn-enviar" onclick="verificarRespuestas()">Enviar respuestas</button>
+    </div>
+
+    <div id="pantalla-final" class="quiz-container resultado-pantalla">
+        <h2 id="mensaje-final"></h2>
+        <img id="imagen-constancia" src="TU_IMAGEN_AQUI.jpg" alt="Constancia">
+        <br><br>
+        <a href="pequenas-cosas.html" class="btn-atras">Volver</a>
+    </div>
+
+    <script>
+        const todasLasPreguntas = [
+            { p: "1. Cuando algo me molesta de verdad, suelo…", o: ["Decirlo al instante", "Ignorarlo", "Guardarlo y analizarlo", "Hacer un comentario indirecto"], c: 2 },
+            { p: "2. Si me quedo callada de repente, es porque…", o: ["Me aburrí", "Estoy enojada", "Estoy pensando demasiado", "No me importa"], c: 2 },
+            { p: "3. En una discusión importante, yo suelo…", o: ["Elevar la voz", "Ceder", "Escuchar primero", "Evitarla"], c: 2 },
+            { p: "4. Con un problema personal, lo primero es…", o: ["Pedir consejo", "Distraerme", "Pensarlo sola", "Actuar"], c: 2 },
+            { p: "5. Si alguien me lastima, me cuesta…", o: ["Decir que me dolió", "Confiar otra vez", "Mantener la calma", "Recordarlo"], c: 1 },
+            { p: "6. En momentos de estrés, yo…", o: ["Me aíslo", "Me vuelvo habladora", "Finjo estar bien", "Me enojo"], c: 0 },
+            { p: "7. Al tomar decisiones importantes uso…", o: ["Lo que dicen otros", "Lo que siento", "Reflexión", "Lo más rápido"], c: 2 },
+            { p: "8. Si necesito apoyo emocional…", o: ["Lo pido", "Espero que lo noten", "Me lo guardo", "Me distraigo"], c: 2 },
+            { p: "9. En una relación, si algo no me gusta…", o: ["Lo dejo pasar", "Lo digo directo", "Espero el momento", "Me alejo"], c: 2 },
+            { p: "10. Ante un cambio importante…", o: ["Me adapto", "Me resisto", "Necesito tiempo", "Me entusiasmo"], c: 2 },
+            { p: "11. ¿Cuál es mi anime favorito?", o: ["Bungou Stray Dogs", "Toilet Bound Hanako-kun", "Magical Girl Site", "K-on!"], c: 1 },
+            { p: "12. ¿Cuál es mi manga favorito?", o: ["Jibaku Shōnen Hanako-Kun", "Oyasumi punpun", "Umibe no Onnanoko", "Takopī no Genzai"], c: 0 },
+            { p: "13. ¿Qué prefiero jugar?", o: ["Genshin Impact", "Omori", "Roblox", "Yandere"], c: 1 },
+            { p: "14. ¿Cuál es mi vocaloid favorita?", o: ["Miku", "Otori Emu", "Megurine Luka", "Kamishiro Rui"], c: 2 },
+            { p: "15. ¿Quién es mi personaje favorito?", o: ["Killua Zoldyck", "Sasuke Uchiha", "Dazai Osamu", "Hanako kun"], c: 1 },
+            { p: "16. ¿Cuál es mi manhwa favorito?", o: ["Lost In The Cloud", "Dreaming Freedom", "Roses And Champagne", "Low Tide"], c: 1 },
+            { p: "17. ¿Qué prefiero hacer?", o: ["Dibujar", "Comer", "Jugar", "Ver videos"], c: 3 },
+            { p: "18. ¿Dónde prefiero estar?", o: ["En mi casa", "En la escuela", "En la calle", "En ningún lugar"], c: 3 },
+            { p: "19. ¿Cuál es mi caricatura favorita?", o: ["Monster High", "Gumball", "Un show más", "Hora de aventura"], c: 1 },
+            { p: "20. ¿Cuál es la app que más uso?", o: ["Tik tok", "Twitter", "WhatsApp", "Instagram"], c: 2 }
+        ];
+
+        let seleccionadas = [];
+
+        function iniciarQuiz() {
+            const bloqueo = localStorage.getItem('bloqueo_quiz');
+            if (bloqueo) {
+                const fechaBloqueo = new Date(bloqueo);
+                const ahora = new Date();
+                if (ahora < fechaBloqueo) {
+                    document.body.innerHTML = `<div class="quiz-container"><h2 class="mensaje-noob">Intentalo de nuevo en 1 mes, noob</h2><p>Vuelve después del ${fechaBloqueo.toLocaleDateString()}</p><a href="pequenas-cosas.html">Atrás</a></div>`;
+                    return;
+                }
+            }
+
+            // Seleccionar 10 aleatorias (intercambio mensual simulado por selección aleatoria)
+            seleccionadas = todasLasPreguntas.sort(() => 0.5 - Math.random()).slice(0, 10);
+            const container = document.getElementById('contenedor-preguntas');
+            
+            seleccionadas.forEach((item, index) => {
+                let html = `<div class="pregunta"><p>${item.p}</p>`;
+                item.o.forEach((opt, i) => {
+                    html += `<label class="opcion"><input type="radio" name="p${index}" value="${i}"> ${opt}</label>`;
+                });
+                html += `</div>`;
+                container.innerHTML += html;
+            });
+        }
+
+        function verificarRespuestas() {
+            let correctas = 0;
+            seleccionadas.forEach((item, index) => {
+                const r = document.querySelector(`input[name="p${index}"]:checked`);
+                if (r && parseInt(r.value) === item.c) correctas++;
+            });
+
+            document.getElementById('quiz-box').style.display = 'none';
+            const pantallaFinal = document.getElementById('pantalla-final');
+            const mensaje = document.getElementById('mensaje-final');
+            pantallaFinal.style.display = 'block';
+
+            if (correctas === 10) {
+                mensaje.innerText = "Eso pense sorra";
+                mensaje.className = "mensaje-pro";
+                document.getElementById('imagen-constancia').style.display = 'block';
+            } else {
+                mensaje.innerText = "Intentalo de nuevo en 1 mes, noob";
+                mensaje.className = "mensaje-noob";
+                const fechaBloqueo = new Date();
+                fechaBloqueo.setMonth(fechaBloqueo.getMonth() + 1);
+                localStorage.setItem('bloqueo_quiz', fechaBloqueo);
+            }
+        }
+
+        iniciarQuiz();
+    </script>
+</body>
+</html>
