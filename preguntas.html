@@ -33,26 +33,26 @@
 
     <script>
         const todasLasPreguntas = [
-            { p: "1. Cuando algo me molesta de verdad, suelo…", o: ["Decirlo al instante", "Ignorarlo", "Guardarlo y analizarlo", "Hacer un comentario indirecto"], c: 2 },
-            { p: "2. Si me quedo callada de repente, es porque…", o: ["Me aburrí", "Estoy enojada", "Estoy pensando demasiado", "No me importa"], c: 2 },
-            { p: "3. En una discusión importante, yo suelo…", o: ["Elevar la voz", "Ceder", "Escuchar primero", "Evitarla"], c: 2 },
-            { p: "4. Con un problema personal, lo primero es…", o: ["Pedir consejo", "Distraerme", "Pensarlo sola", "Actuar"], c: 2 },
-            { p: "5. Si alguien me lastima, me cuesta…", o: ["Decir que me dolió", "Confiar otra vez", "Mantener la calma", "Recordarlo"], c: 1 },
-            { p: "6. En momentos de estrés, yo…", o: ["Me aíslo", "Me vuelvo habladora", "Finjo estar bien", "Me enojo"], c: 0 },
-            { p: "7. Al tomar decisiones importantes uso…", o: ["Lo que dicen otros", "Lo que siento", "Reflexión", "Lo más rápido"], c: 2 },
-            { p: "8. Si necesito apoyo emocional…", o: ["Lo pido", "Espero que lo noten", "Me lo guardo", "Me distraigo"], c: 2 },
-            { p: "9. En una relación, si algo no me gusta…", o: ["Lo dejo pasar", "Lo digo directo", "Espero el momento", "Me alejo"], c: 2 },
-            { p: "10. Ante un cambio importante…", o: ["Me adapto", "Me resisto", "Necesito tiempo", "Me entusiasmo"], c: 2 },
-            { p: "11. ¿Cuál es mi anime favorito?", o: ["Bungou Stray Dogs", "Toilet Bound Hanako-kun", "Magical Girl Site", "K-on!"], c: 1 },
-            { p: "12. ¿Cuál es mi manga favorito?", o: ["Jibaku Shōnen Hanako-Kun", "Oyasumi punpun", "Umibe no Onnanoko", "Takopī no Genzai"], c: 0 },
-            { p: "13. ¿Qué prefiero jugar?", o: ["Genshin Impact", "Omori", "Roblox", "Yandere"], c: 1 },
-            { p: "14. ¿Cuál es mi vocaloid favorita?", o: ["Miku", "Otori Emu", "Megurine Luka", "Kamishiro Rui"], c: 2 },
-            { p: "15. ¿Quién es mi personaje favorito?", o: ["Killua Zoldyck", "Sasuke Uchiha", "Dazai Osamu", "Hanako kun"], c: 1 },
-            { p: "16. ¿Cuál es mi manhwa favorito?", o: ["Lost In The Cloud", "Dreaming Freedom", "Roses And Champagne", "Low Tide"], c: 1 },
-            { p: "17. ¿Qué prefiero hacer?", o: ["Dibujar", "Comer", "Jugar", "Ver videos"], c: 3 },
-            { p: "18. ¿Dónde prefiero estar?", o: ["En mi casa", "En la escuela", "En la calle", "En ningún lugar"], c: 3 },
-            { p: "19. ¿Cuál es mi caricatura favorita?", o: ["Monster High", "Gumball", "Un show más", "Hora de aventura"], c: 1 },
-            { p: "20. ¿Cuál es la app que más uso?", o: ["Tik tok", "Twitter", "WhatsApp", "Instagram"], c: 2 }
+            { p: "Cuando algo me molesta de verdad, suelo…", o: ["Decirlo al instante", "Ignorarlo", "Guardarlo y analizarlo", "Hacer un comentario indirecto"], c: 2 },
+            { p: "Si me quedo callada de repente, es porque…", o: ["Me aburrí", "Estoy enojada", "Estoy pensando demasiado", "No me importa"], c: 2 },
+            { p: "En una discusión importante, yo suelo…", o: ["Elevar la voz", "Ceder", "Escuchar primero", "Evitarla"], c: 2 },
+            { p: "Con un problema personal, lo primero es…", o: ["Pedir consejo", "Distraerme", "Pensarlo sola", "Actuar"], c: 2 },
+            { p: "Si alguien me lastima, me cuesta…", o: ["Decir que me dolió", "Confiar otra vez", "Mantener la calma", "Recordarlo"], c: 1 },
+            { p: "En momentos de estrés, yo…", o: ["Me aíslo", "Me vuelvo habladora", "Finjo estar bien", "Me enojo"], c: 0 },
+            { p: "Al tomar decisiones importantes uso…", o: ["Lo que dicen otros", "Lo que siento", "Reflexión", "Lo más rápido"], c: 2 },
+            { p: "Si necesito apoyo emocional…", o: ["Lo pido", "Espero que lo noten", "Me lo guardo", "Me distraigo"], c: 2 },
+            { p: "En una relación, si algo no me gusta…", o: ["Lo dejo pasar", "Lo digo directo", "Espero el momento", "Me alejo"], c: 2 },
+            { p: "Ante un cambio importante…", o: ["Me adapto", "Me resisto", "Necesito tiempo", "Me entusiasmo"], c: 2 },
+            { p: "¿Cuál es mi anime favorito?", o: ["Bungou Stray Dogs", "Toilet Bound Hanako-kun", "Magical Girl Site", "K-on!"], c: 1 },
+            { p: "¿Cuál es mi manga favorito?", o: ["Jibaku Shōnen Hanako-Kun", "Oyasumi punpun", "Umibe no Onnanoko", "Takopī no Genzai"], c: 0 },
+            { p: "¿Qué prefiero jugar?", o: ["Genshin Impact", "Omori", "Roblox", "Yandere"], c: 1 },
+            { p: "¿Cuál es mi vocaloid favorita?", o: ["Miku", "Otori Emu", "Megurine Luka", "Kamishiro Rui"], c: 2 },
+            { p: "¿Quién es mi personaje favorito?", o: ["Killua Zoldyck", "Sasuke Uchiha", "Dazai Osamu", "Hanako kun"], c: 1 },
+            { p: "¿Cuál es mi manhwa favorito?", o: ["Lost In The Cloud", "Dreaming Freedom", "Roses And Champagne", "Low Tide"], c: 1 },
+            { p: "¿Qué prefiero hacer?", o: ["Dibujar", "Comer", "Jugar", "Ver videos"], c: 3 },
+            { p: "¿Dónde prefiero estar?", o: ["En mi casa", "En la escuela", "En la calle", "En ningún lugar"], c: 3 },
+            { p: "¿Cuál es mi caricatura favorita?", o: ["Monster High", "Gumball", "Un show más", "Hora de aventura"], c: 1 },
+            { p: "¿Cuál es la app que más uso?", o: ["Tik tok", "Twitter", "WhatsApp", "Instagram"], c: 2 }
         ];
 
         let seleccionadas = [];
