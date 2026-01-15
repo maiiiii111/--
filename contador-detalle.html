@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Me & You</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="cartas-page">
+
+    <div class="header-cartas">
+        <p class="desc-negrita">Nuestro Tiempo</p>
+    </div>
+
+    <div class="cartas-container">
+        <div class="carta-box">
+            <div class="cuadrado-gris contador-box">
+                <p class="etiqueta-contador">Me</p>
+                <div id="reloj-me" class="numeros-contador">Cargando...</div>
+            </div>
+        </div>
+
+        <div class="carta-box">
+            <div class="cuadrado-gris contador-box">
+                <p class="etiqueta-contador">You</p>
+                <div id="reloj-you" class="numeros-contador">Cargando...</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-cartas">
+        <a href="pequenas-cosas.html" class="btn-atras">atrás</a>
+    </div>
+
+    <script>
+        function actualizarContadores() {
+            // FECHA DE INICIO (Año, Mes-1, Día)
+            const fechaInicio = new Date(2021, 0, 15); 
+            const ahora = new Date();
+
+            function calcularTiempo(tiempoActual) {
+                const diff = tiempoActual - fechaInicio;
+                const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                const m = Math.floor((diff / 1000 / 60) % 60);
+                const s = Math.floor((diff / 1000) % 60);
+                return `${d}d ${h}h ${m}m ${s}s`;
+            }
+
+            // Reloj ME (Hora normal)
+            document.getElementById('reloj-me').innerHTML = calcularTiempo(ahora);
+
+            // Reloj YOU (Adelantado 2 horas)
+            const tiempoYou = new Date(ahora.getTime() + (2 * 60 * 60 * 1000));
+            document.getElementById('reloj-you').innerHTML = calcularTiempo(tiempoYou);
+        }
+
+        setInterval(actualizarContadores, 1000);
+        actualizarContadores();
+    </script>
+</body>
+</html>
+
