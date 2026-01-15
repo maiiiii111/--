@@ -213,21 +213,21 @@ video {
 }
 
 .foto-perfil {
-    width: 200px; /* Mantén el ancho de tu diseño */
-    height: 150px; /* Ajusta la altura según prefieras */
-    object-fit: contain; /* Esto hace que el GIF se vea completo sin recortes */
-    background-color: transparent; /* Asegura que no haya bordes raros */
-    margin-bottom: 10px;
+    width: 100%;       /* Que ocupe todo el ancho del cuadro */
+    height: auto;       /* ¡IMPORTANTE! Que la altura se ajuste sola al GIF */
+    max-height: none;   /* Eliminamos cualquier restricción de altura */
+    object-fit: contain;
+    display: block;
+    margin-bottom: 0;   /* Pegado al nombre/cuadro */
 }
 
 /* Asegúrate de que el contenedor morado mantenga su color */
 .cuadro-morado {
     background-color: #36364E; /* El color morado/gris de tu imagen de Canva */
-    width: 100%;
-    padding: 20px;
-    border-radius: 8px; /* Opcional, para redondear las esquinas del cuadro */
+    width: 100%;        /* Que mida lo mismo que la foto */
+    padding: 15px 0;    /* Espacio arriba y abajo de los números */
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
