@@ -97,9 +97,9 @@ video {
     display: block;
 }
 
-/* Página de Cartas - Estilo exacto a la imagen */
+/* Página de Cartas */
 .cartas-page {
-    background-color: #ffffff; /* Fondo blanco */
+    background-color: #ffffff;
     margin: 0;
     padding: 60px 20px;
     font-family: 'Fredoka', sans-serif;
@@ -120,9 +120,7 @@ video {
 .cartas-container {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    gap: 40px;
-    margin-top: 20px;
+    gap: 30px;
     flex-wrap: wrap;
 }
 
@@ -131,43 +129,51 @@ video {
     color: #000;
 }
 
-/* El cuadro gris oscuro de fondo */
+/* El cuadro gris ahora contiene la imagen Y el texto */
 .cuadrado-gris {
     background-color: #636066; 
-    width: 280px;
-    height: 350px;
-    padding: 25px;
+    width: 250px;
+    height: 320px;
+    padding: 20px;
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Apila imagen arriba y texto abajo */
+    justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
+    transition: transform 0.3s;
+}
+
+.cuadrado-gris:hover {
+    transform: scale(1.03);
 }
 
 .cuadrado-gris img {
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ajusta la foto de portada al cuadro */
+    height: 80%; /* Deja espacio para el texto abajo */
+    object-fit: cover;
 }
 
-.carta-box p {
-    margin-top: 15px;
-    font-size: 1.4rem;
+.cuadrado-gris p {
+    margin: 10px 0 0 0;
+    font-size: 1.2rem;
     font-weight: bold;
+    color: #000; /* Texto negro dentro del cuadro gris */
 }
 
-/* Botón de flecha gris abajo */
+/* Botón "atrás" de texto simple */
 .footer-cartas {
-    margin-top: 80px;
+    margin-top: 60px;
 }
 
-.btn-back {
-    display: inline-block;
-    background-color: #636066;
-    padding: 10px 20px;
-    border-radius: 4px;
+.btn-back-text {
+    text-decoration: none;
+    color: #636066;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+    transition: border 0.3s;
 }
 
-.btn-back img {
-    width: 25px;
-    filter: invert(1); /* Si tu flecha es negra, esto la hace blanca */
+.btn-back-text:hover {
+    border-bottom: 2px solid #636066;
 }
